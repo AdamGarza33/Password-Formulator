@@ -7,6 +7,8 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", ]
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ]
 
 function generatePassword() {
+    var password = "";
+    for(var i = 0; i < passwordLength; i++)
 
 
 }
@@ -41,11 +43,16 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-    createPrompts();
+  var rightPrompts= createPrompts();
+
+  if(rightPrompts) {
+
+  
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+  }
 
 }
 
