@@ -8,8 +8,11 @@ var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ]
 
 function generatePassword() {
     var password = "";
-    for(var i = 0; i < passwordLength; i++)
-
+    for(var i = 0; i < passwordLength; i++) {
+        var random = Math.floor(Math.random() * array.length);
+        password = password + array[random]
+    }
+    return password;
 
 }
 
@@ -22,17 +25,17 @@ function createPrompts() {
       alert("Password length has to contain a number, 8-128 digits. Try again please!");
       return false;  
     }
-    if(confirm("Do you want lowercase letters in your password?")) {
+    if(confirm("Click OK for lower case")) {
         array = array.concat(lowerCase);
       
     }
-    if(confirm("Do you want uppercase letters in your password?")) {
+    if(confirm("Click OK for upper case")) {
         array = array.concat(upperCase);
     }
-    if(confirm("Do you want special characters in your password?")) {
+    if(confirm("Click OK for special characters")) {
     array = array.concat(specialCharacters);
     }
-    if(confirm("Do you want also want numbers in your password?")) {
+    if(confirm("Click OK for numbers")) {
     array = array.concat(numbers);
     }
     return true;
