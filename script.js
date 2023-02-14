@@ -47,17 +47,16 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var rightPrompts= createPrompts();
-
+  var passwordText = document.querySelector("#password");
   if(rightPrompts) {
 
   
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+  var currentPassword = generatePassword();
+  passwordText.value = currentPassword;
+  } 
   }
 
-}
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
